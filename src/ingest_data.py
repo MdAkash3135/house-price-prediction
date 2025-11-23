@@ -37,4 +37,7 @@ class ZipFileIngestor(DataIngestion):
         return df
 
 
-        
+
+
+if __name__ == '__main__':
+    ZipFileIngestor().ingest('Data/archive.zip')    
