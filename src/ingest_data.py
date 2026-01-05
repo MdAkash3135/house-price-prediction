@@ -37,7 +37,14 @@ class ZipFileIngestor(DataIngestion):
         return df
 
 
-
+class DataIngestorFactory:
+    @staticmethod
+    def get_ingestor(file_type: str) -> DataIngestion:
+        """Factory method to get the appropriate data ingestor based on file type."""
+        if file_type == 'zip':
+            return ZipFileIngestor()
+        else:
+            raise ValueError(f"Unsupported file type: {file_type}")
 
 if __name__ == '__main__':
-    ZipFileIngestor().ingest('Data/archive.zip')    
+    DataIngestorFactory.get_ingestor('zip').ingest('Data/archive.zip')    
