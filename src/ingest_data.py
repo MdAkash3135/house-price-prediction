@@ -47,4 +47,5 @@ class DataIngestorFactory:
             raise ValueError(f"Unsupported file type: {file_type}")
 
 if __name__ == '__main__':
-    DataIngestorFactory.get_ingestor('zip').ingest('Data/archive.zip')    
+    # DataIngestorFactory.get_ingestor('zip').ingest('Data/archive.zip')    
+    pass
